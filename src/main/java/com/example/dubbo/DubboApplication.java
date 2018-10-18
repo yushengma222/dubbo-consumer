@@ -2,6 +2,7 @@ package com.example.dubbo;
 
 import com.alibaba.dubbo.spring.boot.annotation.EnableDubboConfiguration;
 import com.example.dubbo.server.UserDubboServer;
+import com.example.dubbo.testdubbo.TopicDubboServer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -17,5 +18,8 @@ public class DubboApplication {
 		ConfigurableApplicationContext run = SpringApplication.run(DubboApplication.class, args);
 		UserDubboServer userDubboServer = run.getBean(UserDubboServer.class);
 		userDubboServer.printUser();
+
+		TopicDubboServer topicDubboServer = run.getBean(TopicDubboServer.class);
+		topicDubboServer.printTopic();
 	}
 }
